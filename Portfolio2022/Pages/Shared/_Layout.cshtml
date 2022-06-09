@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Zack Jagger</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/Portfolio2022.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <script src="https://kit.fontawesome.com/28128f662e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+    @if (ViewData["NoNav"] == null || !(bool)ViewData["NoNav"])
+    {
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/portfolio">Portfolio</a>
+        </nav>
+    }
+    <main>
+        @RenderBody()
+    </main>
+</div>
+
+<div class="terminal-container">
+    <div class="terminal-nav">
+        <p>~: bash -- Zack's Console</p>
+        <a id="closeBtn" href="javascript:void(0)" onclick="toggleTerminal(this)">&#9660;</a>
+    </div>
+    <div class="terminal" id="terminal">
+        <p><span class="txt-green">kcaZ&#64;Alfred</span>:<span class="txt-blue">~</span>$ <span id="welcome"></span></p>
+        <div id="welcomeResponse">
+            <p>---------------------------------</p>
+            <p>Welcome to Zack's terminal.</p>
+            <p>We hope you enjoy your stay!</p>
+            <p>---------------------------------</p>
+        </div>
+        <p id="list"><span class="txt-green">kcaZ&#64;Alfred</span>:<span class="txt-blue">~</span>$ </p>
+        <p id="listResponse" class="bold"><span class="txt-purple">index.html welcome.sh</span> <span class="txt-blue">portfolio about</span></p>
+        <div id="inputLine" class="terminalInput">
+            <p><span class="txt-green">kcaZ&#64;Alfred</span>:<span class="txt-blue">~</span>$</p> <input/></div>
+        </div>
+</div>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/opening.js"></script>
+<script src="~/js/terminal.js"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

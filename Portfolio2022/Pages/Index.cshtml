@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["NoNav"] = true;
+    ViewData["Title"] = "Home page";
+}
+
+<div class="full-banner background-space">
+    <div class="banner-contents">
+        <h1 class="text-xlg">Zack Jagger</h1>
+        <p>A software engineer</p>
+        <div class="planet-container">
+            <a href="/about" class="info-planet">
+                <div class="planet-img">
+                    <img src="~/imgs/icons/portfolio-orange.png"/>
+                </div>
+                <div class="planet-ring"></div>
+                <div class="planet-description">
+                    <p>About</p>
+                </div>
+            </a>
+            <a href="/portfolio" class="info-planet">
+                <div class="planet-img">
+                    <img src="~/imgs/icons/code-green.png"/>
+                </div>
+                <div class="planet-ring"></div>
+                <div class="planet-description">
+                    <p>Portfolio</p>
+                </div>
+            </a>
+            <a href="/contact" class="info-planet">
+                <div class="planet-img">
+                    <img src="~/imgs/icons/contact-purple.png"/>
+                </div>
+                <div class="planet-ring"></div>
+                <div class="planet-description">
+                    <p>Contact</p>
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/in/zack-jagger/" target="_blank" class="info-planet">
+                <div class="planet-img linkedin-logo"></div>
+                <div class="planet-ring"></div>
+                <div class="planet-description">
+                    <p>LinkedIn</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+@* <script src="~/js/planets.js"></script> *@
